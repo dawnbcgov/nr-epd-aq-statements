@@ -13,6 +13,11 @@ contributes:
         - "assets"
     format: bcds-html
     website:
+      announcement: 
+        dismissable: false
+        content: "**Note** - This is an prototype site, please visit gov.bc.ca - [Air advisories](https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/air-advisories) for current information."
+        type: primary
+        position: below-navbar
       page-footer:
         border: false
         center: |
@@ -58,32 +63,27 @@ contributes:
       resources:
         - "*.html"
         - "*.pdf"
-      title: "Air quality advisories"
+      title: "Air quality warnings"
       navbar:
         logo: /_extensions/bcds/assets/BCID_H_rgb_pos.svg
         right:
-          - text: Issued advisories
+          - text: Issued warnings
             href: index.qmd
-          - text: Historical advisories
-            href: statements.qmd
+          - text: Historical warnings
+            href: warnings.qmd
       sidebar:
         style: "docked"
         alignment: left
         border: false
         collapse-level: 3
         contents:
-          - text: Air Quality Data
-          - section: Active advisories
-            contents: statements
           - section: Air Quality Data
             href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality
             contents:
-              - text: Air advisories
-                href: index.qmd
-              - text: Historical advisories
-                href: statements.qmd
-          - text: BCDS Shortcode Demos
-            href: shortcode_demos.qmd
+              - text: Air warnings
+                href: index.qmd                
+              - text: Historical warnings
+                href: warnings.qmd
           - text: Air Quality Subscription Service
             href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/air-advisories/air-quality-subscription-service
           - text: "Air Quality Health Index"
@@ -122,5 +122,3 @@ contributes:
         - bcds-inline-alert.scss
         - bcds-cards.scss
         - bcds-accordion.scss
-
-
