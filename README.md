@@ -37,7 +37,9 @@ Unless required by applicable law or agreed to in writing, software distributed 
 Some trademarks/logos found in this repository are the intellectual property rights of our partner organizations and are included here with permission solely for BC government use in association with the official public air quality warnings. These trademarks/logos remain the intellectual property rights of the respective partner organizations:
 - First Nations Health Authority Logo is copyright (c) First Nations Health Authority
 - Interior Health Authority Logo is copyright (c) Interior Health Authority
+- Fraser Health Authority Logo is copyright (c) Fraser Health Authority
 - Vancouver Coastal Health Authority Logo is copyright (c) Vancouver Coastal Health Authority
 - Vancouver Island Health Authority Logo is copyright (c) Vancouver Island Health Authority Logo
 - Northern Health Authority Logo is copyright (c) Northern Health Authority
+- BC Centre for Disease Control is copyright (c) Provincial Health Services Authority
 - WorkSafeBC Logo is copyright (c) WorkSafeBC
