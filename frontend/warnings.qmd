@@ -7,7 +7,7 @@ listing:
     title: "Warning Type"
     location: "Location"
     author: "Contact"
-  contents: "warnings/**/*md"
+  contents: "warnings/**/*.*md"
 ---
 
 <!-- Table of all warnings: https://quarto.org/docs/websites/website-listings.html -->
