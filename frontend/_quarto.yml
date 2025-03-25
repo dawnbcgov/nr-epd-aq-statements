@@ -2,6 +2,7 @@ project:
   type: bcds
   pre-render:
     - construct-lists.py
+    - strip-logo-whitespace.py
   preview:
     port: 3000
     browser: false
