@@ -70,6 +70,11 @@
   /* adjustable */
   width: $grid-body-width / 4;
 
+  &.wide {
+    /* full width when specified */
+    width: 100%;    
+  }
+
   @media only screen and (max-width: 575px) {
     /* full width looks better on small screens */
     width: 100%;
