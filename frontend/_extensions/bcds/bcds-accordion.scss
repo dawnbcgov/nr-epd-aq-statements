@@ -41,6 +41,11 @@ details.bcds-disclosure {
     padding: $layout-padding-medium $layout-padding-large;
   }
 
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-top: $layout-margin-none;
+    margin-bottom: $layout-margin-none;
+  }
+
   display: flex;
   flex-direction: column;
 
