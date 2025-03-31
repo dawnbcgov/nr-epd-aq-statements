@@ -44,12 +44,12 @@ return {
     if quarto.doc.is_format("html:js") then
       local markup = ""
 
-      markup = markup .. "<button class='btn' type='button' " ..
+      markup = markup .. "<button class='btn accordian-btn' type='button' " ..
           "onclick='BCDSExpandAll()'>" ..
           "Expand All" ..
           "</button>"
 
-      markup = markup .. "<button class='btn' type='button' " ..
+      markup = markup .. "<button class='btn accordian-btn' type='button' " ..
           "onclick='BCDSCollapseAll()'>" ..
           "Collapse All" ..
           "</button>"

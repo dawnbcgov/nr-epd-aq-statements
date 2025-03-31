@@ -57,3 +57,11 @@ details.bcds-disclosure {
   border-radius: $layout-border-radius-medium $layout-border-radius-none $layout-border-radius-none $layout-border-radius-medium;
 }
 
+.accordian-btn {
+  border-radius: $layout-border-radius-medium;
+  border: 1px solid $surface-color-border-dark;
+  padding: $layout-padding-small $layout-padding-medium;
+  justify-content: center;
+  align-items: center;
+  margin-right: $layout-margin-medium;
+}
