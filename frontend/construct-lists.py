@@ -64,12 +64,12 @@ def process_input_files():
                         if age < threshold:
                             WILDFIRE_SMOKE_WARNINGS.append(entry_from_header)
 
-                # not mutually exclusive with aq-warning
+                # not mutually exclusive with wildfire_smoke
                 if 'date' in parsed_header:
                     skip = False
 
-                    # uncomment this stanza to exclude AQ-WARNING from recent statements list
-                    #   if 'type' in parsed_header and parsed_header['type'].lower() == 'aq-warning':
+                    # uncomment this stanza to exclude wildfire_smoke from recent statements list
+                    #   if 'type' in parsed_header and parsed_header['type'].lower() == 'wildfire_smoke':
                     #      skip = True
 
                     if not skip:
