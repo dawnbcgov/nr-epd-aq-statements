@@ -9,7 +9,7 @@ This script generates two files as part of the pre-render process for quarto sit
 
 RECENTS_FILE_NAME will contain a yaml list of files with a date attribute newer than RECENT_THRESHOLD_DAYS
 
-AQ-WARNING_FILE_NAME will contain any with an `aq-warning` meta attribute set to True
+WILDFIRE_FILE_NAME will contain any with an `wildfire_smoke` meta attribute set to True
 
 These are then used in custom listings within the qmd markup
 """
@@ -19,14 +19,14 @@ These are then used in custom listings within the qmd markup
 RECENT_THRESHOLD_DAYS = 5
 RECENTS_FILE_NAME = '_recent_warnings.yaml'
 
-AQ-WARNING_FILE_NAME = '_AQ-WARNING.yaml'
+WILDFIRE_FILE_NAME = '_wildfire.yaml'
 
 # globals. do not modify.
 INPUT_FILES = os.getenv('QUARTO_PROJECT_INPUT_FILES').split("\n")
 HEADER_REGEX = re.compile('^---\n((.*\n)+)---\n', re.MULTILINE)
 
 RECENT_WARNINGS = []
-AQ-WARNINGS = []
+WILDFIRE_SMOKE_WARNINGS = []
 
 
 def process_input_files():
@@ -53,16 +53,16 @@ def process_input_files():
                     'location': parsed_header['location'] if 'location' in parsed_header else None,
                 }
 
-                if 'type' in parsed_header and parsed_header['type'].lower() == 'aq-warning':
+                if 'type' in parsed_header and parsed_header['type'].lower() == 'wildfire_smoke':
                     if 'date' in parsed_header:
                         age = (datetime.date.today() - parsed_header['date']).days
                         threshold = RECENT_THRESHOLD_DAYS
 
                         if 'ice' in parsed_header and parsed_header['ice'].lower() == 'issue':
-                            threshold = 1  # Only 1 day for AQ-WARNING with ice = Issue
+                            threshold = 1  # Only 1 day for wildfire_smoke with ice = Issue
 
                         if age < threshold:
-                            AQ-WARNINGS.append(entry_from_header)
+                            WILDFIRE_SMOKE_WARNINGS.append(entry_from_header)
 
                 # not mutually exclusive with aq-warning
                 if 'date' in parsed_header:
@@ -85,5 +85,5 @@ process_input_files()
 with open(RECENTS_FILE_NAME, 'w') as output_file:
     yaml.safe_dump(RECENT_WARNINGS, output_file)
 
-with open(AQ-WARNING_FILE_NAME, 'w') as output_file:
-    yaml.safe_dump(AQ-WARNINGS, output_file)
+with open(WILDFIRE_FILE_NAME, 'w') as output_file:
+    yaml.safe_dump(WILDFIRE_SMOKE_WARNINGS, output_file)
