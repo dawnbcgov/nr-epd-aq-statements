@@ -157,8 +157,12 @@ untitled with logo card contents
 untitled danger card with logo card contents
 {{< card_end >}}
 
-{{< card_start>}}
-untitled card contents
+{{< card_start width="wide" >}}
+Wide version of a card, untitled
+{{< card_end >}}
+
+{{< card_start >}}
+Untitled card contents
 {{< card_end >}}
 
 ## Inline Alerts
