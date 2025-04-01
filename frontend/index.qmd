@@ -7,10 +7,10 @@ listing:
     contents:
       - ./_recent_statements.yaml
     sort: "date desc"
-  - id: ssb
-    template: _ssb_listing.ejs
+  - id: wildfire
+    template: _wildfire_listing.ejs
     contents:
-      - ./_ssb.yaml
+      - ./_wildfire.yaml
     sort: "date desc"
 ---
 
@@ -22,7 +22,7 @@ listing:
 
 ## Wildfire smoke warnings
 
-::: {#ssb}
+::: {#wildfire}
 :::
 
 ## Latest updates

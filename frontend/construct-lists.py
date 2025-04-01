@@ -9,7 +9,7 @@ This script generates two files as part of the pre-render process for quarto sit
 
 RECENTS_FILE_NAME will contain a yaml list of files with a date attribute newer than RECENT_THRESHOLD_DAYS
 
-SSB_FILE_NAME will contain any with an `ssb` meta attribute set to True
+WILDFIRE_FILE_NAME will contain any with an `wildfire_smoke` meta attribute set to True
 
 These are then used in custom listings within the qmd markup
 """
@@ -17,16 +17,16 @@ These are then used in custom listings within the qmd markup
 # editable -- consider posts less than RECENT_THRESHOLD_DAYS days old to be "recent"
 # Hardcoded below to 1 day for smoky skies bulletins with ice = Issue metadata
 RECENT_THRESHOLD_DAYS = 5
-RECENTS_FILE_NAME = '_recent_statements.yaml'
+RECENTS_FILE_NAME = '_recent_warnings.yaml'
 
-SSB_FILE_NAME = '_ssb.yaml'
+WILDFIRE_FILE_NAME = '_wildfire.yaml'
 
 # globals. do not modify.
 INPUT_FILES = os.getenv('QUARTO_PROJECT_INPUT_FILES').split("\n")
 HEADER_REGEX = re.compile('^---\n((.*\n)+)---\n', re.MULTILINE)
 
-RECENT_STATEMENTS = []
-SMOKY_SKIES_BULLETINS = []
+RECENT_WARNINGS = []
+WILDFIRE_SMOKE_WARNINGS = []
 
 
 def process_input_files():
@@ -53,29 +53,29 @@ def process_input_files():
                     'location': parsed_header['location'] if 'location' in parsed_header else None,
                 }
 
-                if 'type' in parsed_header and parsed_header['type'].lower() == 'ssb':
+                if 'type' in parsed_header and parsed_header['type'].lower() == 'wildfire_smoke':
                     if 'date' in parsed_header:
                         age = (datetime.date.today() - parsed_header['date']).days
                         threshold = RECENT_THRESHOLD_DAYS
 
                         if 'ice' in parsed_header and parsed_header['ice'].lower() == 'issue':
-                            threshold = 1  # Only 1 day for SSB with ice = Issue
+                            threshold = 1  # Only 1 day for wildfire_smoke with ice = Issue
 
                         if age < threshold:
-                            SMOKY_SKIES_BULLETINS.append(entry_from_header)
+                            WILDFIRE_SMOKE_WARNINGS.append(entry_from_header)
 
-                # not mutually exclusive with ssb
+                # not mutually exclusive with wildfire_smoke
                 if 'date' in parsed_header:
                     skip = False
 
-                    # uncomment this stanza to exclude SSB from recent statements list
-                    #   if 'type' in parsed_header and parsed_header['type'].lower() == 'ssb':
+                    # uncomment this stanza to exclude wildfire_smoke from recent statements list
+                    #   if 'type' in parsed_header and parsed_header['type'].lower() == 'wildfire_smoke':
                     #      skip = True
 
                     if not skip:
                         age = (datetime.date.today() - parsed_header['date']).days
                         if age < RECENT_THRESHOLD_DAYS:
-                            RECENT_STATEMENTS.append(entry_from_header)
+                            RECENT_WARNINGS.append(entry_from_header)
 
 
 print(yaml.safe_dump(INPUT_FILES))
@@ -83,7 +83,7 @@ print(yaml.safe_dump(INPUT_FILES))
 process_input_files()
 
 with open(RECENTS_FILE_NAME, 'w') as output_file:
-    yaml.safe_dump(RECENT_STATEMENTS, output_file)
+    yaml.safe_dump(RECENT_WARNINGS, output_file)
 
-with open(SSB_FILE_NAME, 'w') as output_file:
-    yaml.safe_dump(SMOKY_SKIES_BULLETINS, output_file)
+with open(WILDFIRE_FILE_NAME, 'w') as output_file:
+    yaml.safe_dump(WILDFIRE_SMOKE_WARNINGS, output_file)
