@@ -82,8 +82,8 @@
   }
 
   .bcds-card-image {
-
-    height: 4rem;
+    max-width: 100%;
+    height: auto;
     display: block;
     padding: 0;
     //margin: $layout-margin-small 0 auto;
