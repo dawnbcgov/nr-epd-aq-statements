@@ -44,12 +44,12 @@ return {
     if quarto.doc.is_format("html:js") then
       local markup = ""
 
-      markup = markup .. "<button class='btn' type='button' " ..
+      markup = markup .. "<button class='btn accordian-btn' type='button' " ..
           "onclick='BCDSExpandAll()'>" ..
           "Expand All" ..
           "</button>"
 
-      markup = markup .. "<button class='btn' type='button' " ..
+      markup = markup .. "<button class='btn accordian-btn' type='button' " ..
           "onclick='BCDSCollapseAll()'>" ..
           "Collapse All" ..
           "</button>"
@@ -111,8 +111,9 @@ return {
       local variant = pandoc.utils.stringify(kwargs["variant"])
       local logo = pandoc.utils.stringify(kwargs["logo"])
       local useIcons = pandoc.utils.stringify(kwargs["useIcons"])
+      local width = pandoc.utils.stringify(kwargs["width"])
 
-      local markup = "<div class='bcds-card " .. variant .. "'>"
+      local markup = "<div class='bcds-card " .. variant .. " " .. width .. "'>"
 
       local icon_variant_map = {
         ['success'] = 'check-circle',

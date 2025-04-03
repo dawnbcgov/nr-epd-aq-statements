@@ -2,9 +2,27 @@
 @import "variables.scss";
 @import "bcds.scss";
 
+.bcds-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $layout-margin-medium;
+  margin-bottom: $layout-margin-xlarge;
+
+  @media only screen and (max-width: 575px) {
+    /* only have one card per row for small screens*/
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bcds-card {
+    /* don't set width on the card when in a wrapper, uses grid properties above */
+    width: 100%;    
+  }
+}
+
 .bcds-card {
 
-  padding: $layout-padding-small $layout-padding-small;
+  padding: $layout-padding-large $layout-padding-large;
   position: relative;
 
   .card-icon {
@@ -55,13 +73,17 @@
     display: inline-block;
   }
 
+  h5 {
+    line-height: $typography-line-heights-dense;
+  }
+
   h5::before {
     border: none;
   }
 
   .bcds-card-image {
-
-    height: 4rem;
+    max-width: 100%;
+    height: auto;
     display: block;
     padding: 0;
     //margin: $layout-margin-small 0 auto;
@@ -69,6 +91,11 @@
 
   /* adjustable */
   width: $grid-body-width / 4;
+
+  &.wide {
+    /* full width when specified */
+    width: 100%;    
+  }
 
   @media only screen and (max-width: 575px) {
     /* full width looks better on small screens */
@@ -90,6 +117,12 @@
         content: '\f285';
       }
     }
+
+    p:last-child {
+      /* remove margin from the last paragraph around the link call to action */
+      margin-bottom: 0;
+    }
+
   }
 
 }
