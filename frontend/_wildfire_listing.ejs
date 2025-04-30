@@ -3,19 +3,19 @@
     <table>
         <thead>
         <tr>
-            <td>Title</td>
-            <td>Date</td>
             <td>Location</td>
-            <td>Categories</td>
+            <td>Warning Type</td>
+            <td>Status</td>
+            <td>Date</td>
         </tr>
         </thead>
         <tbody>
         <% for (const item of items) { %>
             <tr>
-                <td><a href="<%- item.path %>"><%= item.title %></a></td>
-                <td><%= item.date %></td>
                 <td><%= item.location %></td>
-                <td><%= item.categories %></td>
+                <td><a href="<%- item.path %>"><%= item.title %></a></td>
+                <td><%= item.ice %></td>
+                <td><%= item.date %></td>
             </tr>
         <% } %>
         </tbody>
