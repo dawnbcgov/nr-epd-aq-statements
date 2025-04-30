@@ -1,4 +1,5 @@
 Version: 1.0
+ProjectId: c0c71ccf-30eb-4754-b64b-0184b49f48be
 
 RestoreWorkspace: Default
 SaveWorkspace: Default
@@ -11,3 +12,5 @@ Encoding: UTF-8
 
 RnwWeave: Sweave
 LaTeX: pdfLaTeX
+
+ProjectName: aqwarnings
