@@ -15,7 +15,7 @@ contributes:
     website:
       announcement: 
         dismissable: false
-        content: "**Note** - This is an prototype site, please visit gov.bc.ca - [Air advisories](https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/air-advisories) for current information."
+        content: "**Note** - This is a prototype site, please visit gov.bc.ca - [Air advisories](https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/air-advisories) for current information."
         type: primary
         position: below-navbar
       page-footer:
@@ -80,20 +80,18 @@ contributes:
           - section: Air Quality Data
             href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality
             contents:
-              - text: Air warnings
+              - text: Air Quality Warnings
                 href: index.qmd                
-              - text: Historical warnings
-                href: warnings.qmd
           - text: Air Quality Subscription Service
-            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/air-advisories/air-quality-subscription-service
+            href: https://www2.gov.bc.ca/gov/content?id=2F89F266A1BE40EC8926C45A05E28BCD
           - text: "Air Quality Health Index"
-            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/aqhi
+            href: https://www2.gov.bc.ca/gov/content?id=956DEE07D8F744D2B8A7620FD241C161
           - text: "Air Quality Health Index widget"
-            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/aghi-widget
+            href: https://www2.gov.bc.ca/gov/content?id=063D315EBDCB45BEA4AF964259C0D6FC
           - text: "Latest air quality data"
-            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/current-air-quality-data
+            href: https://www2.gov.bc.ca/gov/content?id=292EC5BD62A149A192B7DD2CE155E33E
           - text: "How we measure"
-            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/measuring
+            href: https://www2.gov.bc.ca/gov/content?id=D346785D05974705ADB564F81F058186
   formats:
     html:
       toc: false
