@@ -120,3 +120,5 @@ contributes:
         - bcds-inline-alert.scss
         - bcds-cards.scss
         - bcds-accordion.scss
+      template-partials:
+        - partials/title-block.html

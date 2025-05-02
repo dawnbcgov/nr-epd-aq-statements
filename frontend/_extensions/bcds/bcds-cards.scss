@@ -18,6 +18,10 @@
     /* don't set width on the card when in a wrapper, uses grid properties above */
     width: 100%;    
   }
+
+  p:first-of-type {
+    display: none;
+  }
 }
 
 .bcds-card {
