@@ -84,22 +84,38 @@ body {
   src: url(/_extensions/bcds/assets/static/BCSans-LightItalic.dN5bWDr3.woff2) format("woff2"), url(/_extensions/bcds/assets/static/BCSans-LightItalic.C2AxY9aU.woff) format("woff")
 }
 
+
 /*-- scss:rules --*/
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  border: none;
+  line-height: $typography-line-heights-sparse;  
+}
+
+h2, h3, h4, h5, h6 {
   border: none;
   line-height: $typography-line-heights-sparse;
 
   &:before {
     content: ' ';
-    width: 40px;
+    width: 36px;
     display: block;
-    border-bottom: $layout-padding-small solid $theme-primary-gold;
+    border-bottom: $layout-padding-xsmall solid $theme-primary-gold;
     padding: 0;
     margin: 0 0 $layout-padding-small;
     //margin: 0;
   }
 
 }
+
+/*
+ Don't include the header accent on the table of contents
+ */
+h2#toc-title {
+  &:before {
+    display: none;
+  }
+}
+
 
 hr {
   color: $theme-primary-gold;
@@ -112,8 +128,7 @@ hr {
   .navbar {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0 0 0 0;
 
     width: 100%;
 
@@ -137,7 +152,7 @@ hr {
           background-repeat: no-repeat;
           background-size: contain;
           width: 48px;
-          min-height: 48px;
+          min-height: 60px;
           display: block;
 
           img.navbar-logo {
@@ -145,12 +160,10 @@ hr {
           }
         }
         @media only screen and (max-width: 991px) {
-          height: 60px;
-          border-right: 1px solid $theme-gray-50;
+          height: 48px;
         }
         @media only screen and (min-width: 992px) {
-          height: 80px;
-          border-right: 1px solid $theme-gray-50;
+          height: 64px;
         }
 
         margin: auto 0;
@@ -160,6 +173,7 @@ hr {
         padding-left: $layout-padding-medium;
         font-weight: $typography-font-weights-regular;
         text-transform: capitalize;
+        border-left: 1px solid $theme-gray-50;
       }
     }
 
@@ -219,4 +233,25 @@ table {
   @media only screen and (max-width: 575px) {
     overflow-x: scroll;
   }
+}
+
+/*
+ Apply styling to the figure group for the statement logos
+ */
+
+ @media (max-width: 767.98px) {
+  .quarto-layout-row {
+      flex-direction: row;
+  }
+}
+
+@media (max-width: 320px) {
+  .quarto-layout-row {
+      flex-direction: column;
+  }
+}
+
+.quarto-layout-cell img {
+  max-width: 100%;
+  max-height: 7em;
 }
