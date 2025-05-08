@@ -2,27 +2,16 @@
 title: "Air quality warnings"
 
 listing:
-  - id: aq-statements
-    template: _aqs_listing.ejs
+  - id: aq-warnings
+    template: _aqw_listing.ejs
     contents:
-      - ./_recent_statements.yaml
-    sort: "date desc"
-  - id: wildfire
-    template: _wildfire_listing.ejs
-    contents:
-      - ./_wildfire.yaml
+      - ./_recent_warnings.yaml
     sort: "date desc"
 ---
 
 ## Issued warnings
 
-::: {#aq-statements}
-:::
-
-
-## Wildfire smoke warnings
-
-::: {#wildfire}
+::: {#aq-warnings}
 :::
 
 ## Latest updates
