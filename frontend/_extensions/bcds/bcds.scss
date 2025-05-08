@@ -177,6 +177,23 @@ hr {
       }
     }
 
+    a.nav-link {
+      color: $typography-color-primary;
+
+      .active {
+        color: $typography-color-primary;
+      }
+  
+    }
+
+    a.nav-link:hover {
+      text-decoration: underline;
+    }
+    
+    #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+      color: $typography-color-primary;
+    }
+
   }
 }
 
@@ -214,7 +231,7 @@ hr {
 
   .sidebar-item-container .sidebar-link.active {
     background: $surface-color-background-light-blue;
-    border-left: $layout-border-width-large solid $theme-blue-70;
+    border-left: $layout-border-width-large solid $theme-blue-90;
     font-weight: $typography-font-weights-bold;
   }
 }
