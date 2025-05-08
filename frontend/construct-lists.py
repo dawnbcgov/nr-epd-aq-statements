@@ -68,9 +68,15 @@ def process_input_files():
                 if 'date' in parsed_header:
                     skip = False
 
-                    # uncomment this stanza to exclude wildfire_smoke from recent statements list
-                    #   if 'type' in parsed_header and parsed_header['type'].lower() == 'wildfire_smoke':
-                    #      skip = True
+                    # only add the most recent issued wildfire_smoke due to the differences in warning
+                    # comment this out to not have separate behaviour for wildfire_smoke
+                    if 'type' in parsed_header and parsed_header['type'].lower() == 'wildfire_smoke':
+                        if 'ice' in parsed_header and parsed_header['ice'].lower() == 'issue':
+                            age = (datetime.date.today() - parsed_header['date']).days
+                            threshold = 1  # Only 1 day for wildfire_smoke with ice = Issue
+
+                        if age > threshold:
+                            skip = True
 
                     if not skip:
                         age = (datetime.date.today() - parsed_header['date']).days
