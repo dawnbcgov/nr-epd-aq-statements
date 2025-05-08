@@ -50,7 +50,7 @@ Workflow: [.github/workflows/pr.yml](.github/workflows/pr.yml)
 
 #### Production
 
-And PR that is merged into `main` is automatically deployed to `gh-pages` which is the 'production' or live version of the website.
+Any PR that is merged into `main` is automatically deployed to `gh-pages` which is the 'production' or live version of the website.
 
 Workflow: [.github/workflows/merge.yml](.github/workflows/merge.yml)
 
