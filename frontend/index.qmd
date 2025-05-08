@@ -27,7 +27,7 @@ listing:
 {{< callout_end >}}
 
 
-## About Air quality warnings
+## About air quality warnings
 
 An air quality warning is issued when pollutant concentrations approach or exceed predetermined limits, or when degraded-air-quality episodes are expected to continue or worsen.
 
@@ -39,6 +39,6 @@ Warnings are issued in order to:
 - provide vulnerable individuals and the general public with health advice developed by BC health agencies
 
 
-## About Air quality warnings - Wildfire smoke
+## About wildfire smoke air quality warnings
 
 The wildfire smoke warning is a special type of public advisory to communicate the rapidly changing nature of wildfire smoke. It is issued when areas of the province are being impacted or have reasonable potential to be impacted by wildfire smoke within 24 to 48 hours. These warnings are based on available pollutant concentrations information, satellite information, smoke forecast models and visual observations, and are not intended to manage local emission sources.
