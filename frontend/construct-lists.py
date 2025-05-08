@@ -75,7 +75,7 @@ def process_input_files():
                             age = (datetime.date.today() - parsed_header['date']).days
                             threshold = 1  # Only 1 day for wildfire_smoke with ice = Issue
 
-                        if age > threshold:
+                        if age >= threshold:
                             skip = True
 
                     if not skip:
