@@ -2,11 +2,11 @@
 title: "Historical warnings"
 listing:
   type: table
-  fields: [location, title, date, author]
+  fields: [location, title, ice, date]
   field-display-names:
     title: "Warning Type"
+    ice: "Status"
     location: "Location"
-    author: "Contact"
   contents: "warnings/**/*.*md"
 ---
 

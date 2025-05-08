@@ -32,7 +32,9 @@
 /* Theme - light grey (default) */
 .bcds-Callout.lightGrey {
   background-color: $surface-color-background-light-gray;
-  border-left: $layout-border-width-large solid $theme-primary-blue;
+  border-left: 8px solid $theme-primary-blue;
+  border-radius: 0px;
+  box-shadow: none;
 }
 
 /* Theme - light blue */

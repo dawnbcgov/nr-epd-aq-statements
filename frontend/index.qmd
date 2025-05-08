@@ -2,27 +2,16 @@
 title: "Air quality warnings"
 
 listing:
-  - id: aq-statements
-    template: _aqs_listing.ejs
+  - id: aq-warnings
+    template: _aqw_listing.ejs
     contents:
-      - ./_recent_statements.yaml
-    sort: "date desc"
-  - id: wildfire
-    template: _wildfire_listing.ejs
-    contents:
-      - ./_wildfire.yaml
+      - ./_recent_warnings.yaml
     sort: "date desc"
 ---
 
 ## Issued warnings
 
-::: {#aq-statements}
-:::
-
-
-## Wildfire smoke warnings
-
-::: {#wildfire}
+::: {#aq-warnings}
 :::
 
 ## Latest updates
@@ -33,12 +22,12 @@ listing:
 
 - Subscribe to the [Air Quality Subscription Service](https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/air-advisories/air-quality-subscription-service)
 - Outside regular business hours, visit [Environment and Climate Change Canada’s Public Weather Alerts for B.C.](https://weather.gc.ca/?province=bc&zoom=5&alertTableFilterProv=BC)
-- For **Metro Vancouver** and the **Fraser Valley Regional District**, see [Metro Vancouver’s Air Quality Data and Advisories](https://metrovancouver.org/services/air-quality-climate-action/air-quality-data-and-advisories) and [AirMap.ca](https://gis.metrovancouver.org/maps/Air). For subscription to air quality advisories and bulletins, use [Metro Vancouver’s Air Quality and Climate Change Mailing List](https://metrovancouver.org/services/air-quality-climate-action/mailing-list)
+- For **Metro Vancouver** and the **Fraser Valley Regional District**, see [Metro Vancouver’s Air Quality Data and Warnings](https://metrovancouver.org/services/air-quality-climate-action/air-quality-data-and-advisories) and [AirMap.ca](https://gis.metrovancouver.org/maps/Air). For subscription to air quality advisories and bulletins, use [Metro Vancouver’s Air Quality and Climate Change Mailing List](https://metrovancouver.org/services/air-quality-climate-action/mailing-list)
 
 {{< callout_end >}}
 
 
-## About Air quality warnings
+## About air quality warnings
 
 An air quality warning is issued when pollutant concentrations approach or exceed predetermined limits, or when degraded-air-quality episodes are expected to continue or worsen.
 
@@ -50,6 +39,6 @@ Warnings are issued in order to:
 - provide vulnerable individuals and the general public with health advice developed by BC health agencies
 
 
-## About Air quality warnings - Wildfire smoke
+## About wildfire smoke air quality warnings
 
 The wildfire smoke warning is a special type of public advisory to communicate the rapidly changing nature of wildfire smoke. It is issued when areas of the province are being impacted or have reasonable potential to be impacted by wildfire smoke within 24 to 48 hours. These warnings are based on available pollutant concentrations information, satellite information, smoke forecast models and visual observations, and are not intended to manage local emission sources.
